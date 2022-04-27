@@ -9,17 +9,16 @@ $ cargo install wasm-pack
 ```
 
 ```shell
-$ wasm-pack build 
+$ wasm-pack build --target web
 ```
 
 pkgディレクトリにnpmパッケージの体で色々作られる
 ```shell
 $ ls -1 pkg/
-hello_wasm_bg.js    ... WASMとJSのつなぎのコード
-hello_wasm_bg.wasm  ... web用のWASM
+hello_wasm_bg.wasm          ...コンパイルされたWASM
 hello_wasm_bg.wasm.d.ts
 hello_wasm.d.ts
-hello_wasm.js       ...
+hello_wasm.js               ...つなぎのJSコード
 package.json
 README.md
 
@@ -30,7 +29,6 @@ $ cat pkg/package.json
   "files": [
     "hello_wasm_bg.wasm",
     "hello_wasm.js",
-    "hello_wasm_bg.js",
     "hello_wasm.d.ts"
   ],
   "module": "hello_wasm.js",
@@ -39,33 +37,14 @@ $ cat pkg/package.json
 }
 ```
 
-webpackで上記のnpmパッケージを取り込んでバンドルする形で動かす。
-```shell
-$ cd testsite/
-$ npm i
-$ npm run serve
-
-> testsite@1.0.0 serve
-> webpack-dev-server
-
-<i> [webpack-dev-server] Project is running at:
-<i> [webpack-dev-server] Loopback: http://localhost:8080/
-  :
+[index.html](index.html)をローカルのhttpサーバーで動かす
+```
+$ cargo install miniserve
+$ miniserve
+Available at (non-exhaustive list):
+    http://127.0.0.1:8080
 ```
 
 # Note
 
-MDNサイトのサンプルはWebpack 4.x系（deprecated）だったのでWebpack 5.xに合わせて一部調整
-
-* testsite/package.jsonのwebpackバージョン指定
-* testsite/webpack.config.jsにて、
-    * experiments.asyncWebAssembly = true
-    * pluginsにHtmlWebpackPluginを導入
-
-あとは下記が気持ち悪かったので普通にimportするように変更
-```js
-const js = import("./node_modules/@yournpmusername/hello-wasm/hello_wasm.js");
-js.then(js => {
-  js.greet("WebAssembly");
-});
-```
+MDNの英語サイトにだけ`--target web`でビルドする手順が載っていて、こちらのほうが圧倒的に簡単だった。
