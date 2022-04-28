@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hello-wasm example</title>
+  </head>
+  <body>
+    <script>let dummy = {};</script>
+    <script type="module">
+      import init, {do_something} from "./pkg/wasm_stdlib.js";
+      dummy["do_something"] = do_something;
+      init();
+    </script>
+  </body>
+</html>
