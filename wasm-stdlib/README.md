@@ -35,3 +35,14 @@ Available at (non-exhaustive list):
 * panic!メッセージはでない
 
 ## WASM on WebBrowser + web-sys
+
+上記の続きブラウザのDeveloperツールのConsoleで試す。
+```shell
+dummy.do_something_with_websys(0)
+wasm_stdlib.js:174 arg zero is given!!
+100
+```
+
+do_something_with_websys は以下のように書き換えてある
+- printf! -> [web_sys::console::log_1](https://rustwasm.github.io/wasm-bindgen/examples/console-log.html)
+- panic! -> [console_error_panic_hook](https://rustwasm.github.io/docs/wasm-pack/tutorials/npm-browser-packages/template-deep-dive/src-utils-rs.html#2-what-is-console_error_panic_hook) を使ってhookしてconsole.errorに流す
