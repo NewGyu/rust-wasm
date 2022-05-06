@@ -1,4 +1,5 @@
 mod gamefield;
 mod solver;
 
-pub use solver::HanoiSolver;
+pub use gamefield::*;
+pub use solver::*;

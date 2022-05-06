@@ -22,15 +22,19 @@ impl GameField {
         }
     }
 
-    #[allow(unused)]
-    pub fn printf(&self) {
+    pub fn inspection(&self) -> String {
+        let mut str = String::new();
+        use std::fmt::Write;
         for x in &self.sticks {
-            println!(
+            writeln!(
+                str,
                 "{}: {:?}",
                 x.0,
                 x.1.disks.iter().map(|d| d.size).collect::<Vec<_>>()
-            );
+            )
+            .unwrap();
         }
+        str
     }
 
     pub fn is_completed(&self) -> bool {

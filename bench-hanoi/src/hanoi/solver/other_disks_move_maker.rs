@@ -67,7 +67,7 @@ mod tests {
 
     #[test]
     fn move_other_disk() {
-        let mut solver = HanoiSolver::new(3);
+        let mut solver = HanoiSolver::new(3, None);
         let mv1 = solver.move_min_disk();
         let mv2 = solver.move_movable_other_disk();
 

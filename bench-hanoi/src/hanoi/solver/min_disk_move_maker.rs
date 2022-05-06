@@ -85,7 +85,7 @@ mod tests {
 
     #[test]
     fn move_min_disk() {
-        let mut solver = HanoiSolver::new(3);
+        let mut solver = HanoiSolver::new(3, None);
         let mv = solver.move_min_disk();
         assert_eq!(mv, Move { from: Src, to: Dst });
         assert_eq!(solver.game_field.sticks[&Src].disks.to_disk_sizes(), [2, 3]);

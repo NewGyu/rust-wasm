@@ -8,3 +8,5 @@ WASM/WASIをつかむためのサンプルコード色々
     - WASIランタイムの一つwasmtimeを使ってファイルコピーをするデモ
 - [wasm-stdlib](wasm-stdlib/README.md)
     - ブラウザWASM, WASIそれぞれで標準出力、panic!を試すデモ
+- [bench-hanoi](benchi-hanoi/README.md)
+    - ネイティブ、WASI、ブラウザWASMそれぞれでハノイの塔を題材にベンチマークを測るデモ
