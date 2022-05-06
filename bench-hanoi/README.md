@@ -1,6 +1,6 @@
 # What's this
 
-計算量O(2n)のハノイの塔を題材にしてベンチマークを取るためのもの。
+計算量O(2n)の[ハノイの塔](https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%8E%E3%82%A4%E3%81%AE%E5%A1%94)を題材にしてベンチマークを取るためのもの。
 - コマンドライン
     - Node.js
     - ネイティブバイナリ
@@ -12,6 +12,15 @@
 # Try it out
 
 ## CLI Node.js
+```shell
+$ time ./js/main.js 25
+finished. (33554431 round)
+
+real    0m5.172s
+user    0m5.185s
+sys     0m0.000s
+```
+
 ## CLI ネイティブバイナリ
 ```shell
 $ cargo build --release

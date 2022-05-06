@@ -76,7 +76,9 @@ export class HanoiSolver {
             round++;
             this.moveOtherAvailableDisk();
         } while (true)
-        debugPrint(round, this.gameField);
+        if (debug)
+            debugPrint(round, this.gameField);
+        return round;
     }
 
     moveMinDisk() {
@@ -114,6 +116,6 @@ export class HanoiSolver {
 }
 
 function debugPrint(round, gameField) {
-    console.log(round);
+    console.log("round %s", round);
     gameField.printf();
 }
