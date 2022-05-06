@@ -8,7 +8,7 @@ pub fn solve_hanoi(num_of_disks: u16, debug: Option<bool>) {
         _ => None,
     };
     let r = HanoiSolver::new(num_of_disks, debug_print_fn).solve();
-    web_sys::console::log_1(&format!("finished. ({} round)", r));
+    web_sys::console::log_1(&format!("finished. ({} round)", r).into());
 }
 
 fn debug_print(round: &u32, field: &GameField) {
