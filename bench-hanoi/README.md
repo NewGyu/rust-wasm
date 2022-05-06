@@ -41,5 +41,14 @@ real    0m4.283s
 user    0m4.284s
 sys     0m0.000s
 ```
-## Browser JS
-## Browser WASI
+
+## Browser WASM & JS
+```shell
+$ wasm-pack build --release
+$ cd testsite/
+$ npm run serve
+<i> [webpack-dev-server] Project is running at:
+<i> [webpack-dev-server] Loopback: http://localhost:8080/
+```
+![](browser_wasm.png)
+![](measure.png)
