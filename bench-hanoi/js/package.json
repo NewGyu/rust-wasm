@@ -1,9 +1,0 @@
-{
-    "name": "js-bench",
-    "type": "module",
-    "scripts": {
-        "start": "./main.js"
-    },
-    "module": "lib.js",
-    "types": "lib.d.js"
-}

@@ -1,0 +1,12 @@
+{
+  "name": "wasm_stdlib",
+  "version": "0.1.0",
+  "files": [
+    "wasm_stdlib_bg.wasm",
+    "wasm_stdlib.js",
+    "wasm_stdlib.d.ts"
+  ],
+  "module": "wasm_stdlib.js",
+  "types": "wasm_stdlib.d.ts",
+  "sideEffects": false
+}
