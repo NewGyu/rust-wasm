@@ -53,6 +53,6 @@ $ npm run serve
 ![](misc/browser_wasm.png)
 ![](misc/measure.png)
 
-Why...
+※DevToolsを開いた状態で計測するとWASMの実行が異常に遅くなるという事象が発生してうまく計測できません。
 
-![](misc/performance_result.png)
+https://twitter.com/tkihira/status/1521736039735635968
