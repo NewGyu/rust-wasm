@@ -34,7 +34,7 @@ sys     0m0.000s
 ## CLI WASI
 ```shell
 $ cargo build --release --target wasm32-wasi
-$ time wasmtime ./target/wasm32-wasi/release/wasm-bench.wasm 25 
+$ time wasmtime ./target/wasm32-wasi/release/wasm-bench.wasm 25
 finished. (33554431 round)
 
 real    0m4.283s
@@ -50,5 +50,9 @@ $ npm run serve
 <i> [webpack-dev-server] Project is running at:
 <i> [webpack-dev-server] Loopback: http://localhost:8080/
 ```
-![](browser_wasm.png)
-![](measure.png)
+![](misc/browser_wasm.png)
+![](misc/measure.png)
+
+Why...
+
+![](misc/performance_result.png)
