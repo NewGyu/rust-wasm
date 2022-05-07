@@ -9,11 +9,20 @@
 <body>
     <script src="./index.js"></script>
     <h1>Try wasm bench</h1>
-    <p>Open Developer Console with pressing `Ctrl + Shift +I`</p>
+    <p>Click the buttons below that runs Tower of Hanoi with 25 disks.</p>
     <ul>
-        <li>hanoi.solve_with_js(25)</li>
-        <li>hanoi.solve_with_wasm(25)</li>
+        <li>
+            <button onclick="hanoi.solve_with_js(25)">run js ver</button>
+        </li>
+        <li>
+            <button onclick="hanoi.solve_with_wasm(25)">run wasm ver</button>
+        </li>
     </ul>
+    <p>
+        Please check console.log message with devetools
+        <b>a few seconds after you press the above button</b>.
+    </p>
+    <p>Because chromium devtools affects wasm perfomance.</p>
 </body>
 
 </html>
