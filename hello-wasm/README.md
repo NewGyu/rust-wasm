@@ -1,5 +1,6 @@
 # What's this
-wasm-packでビルドされたものをWebブラウザ上で動かすサンプル
+
+This is an example for trying to run wasm with `npm start`.
 - https://developer.mozilla.org/ja/docs/WebAssembly/Rust_to_wasm
 
 # Try it out
@@ -9,42 +10,28 @@ $ cargo install wasm-pack
 ```
 
 ```shell
-$ wasm-pack build --target web
+$ cd rust
+$ wasm-pack build --target nodejs
 ```
 
-pkgディレクトリにnpmパッケージの体で色々作られる
+The following npm package will be generated.
 ```shell
 $ ls -1 pkg/
-hello_wasm_bg.wasm          ...コンパイルされたWASM
+hello_wasm_bg.wasm
 hello_wasm_bg.wasm.d.ts
 hello_wasm.d.ts
-hello_wasm.js               ...つなぎのJSコード
+hello_wasm.js
 package.json
-README.md
-
-$ cat pkg/package.json 
-{
-  "name": "hello-wasm",
-  "version": "0.1.0",
-  "files": [
-    "hello_wasm_bg.wasm",
-    "hello_wasm.js",
-    "hello_wasm.d.ts"
-  ],
-  "module": "hello_wasm.js",
-  "types": "hello_wasm.d.ts",
-  "sideEffects": false
-}
 ```
 
-[index.html](index.html)をローカルのhttpサーバーで動かす
-```
-$ cargo install miniserve
-$ miniserve
-Available at (non-exhaustive list):
-    http://127.0.0.1:8080
-```
+Run with `npm`.
+```shell
+$ cd ../js
+$ npm install
+$ npm start
 
-# Note
+> awesome-js@1.0.0 start
+> node index.js
 
-MDNの英語サイトにだけ`--target web`でビルドする手順が載っていて、こちらのほうが圧倒的に簡単だった。
+Hello, hello wasm!!!!!
+```
